@@ -1,0 +1,38 @@
+// SPDX-License-Identifier: Apache-2.0
+// Copyright Pionix GmbH and Contributors to EVerest
+
+#include "interface_tutorial_moduleImpl.hpp"
+
+using namespace std::chrono_literals;
+
+namespace module {
+namespace interface_impl_tutorial_module {
+
+void interface_tutorial_moduleImpl::init() {
+}
+
+void interface_tutorial_moduleImpl::ready() {
+    
+    while(true) {
+        std::this_thread::sleep_for(2000ms);
+        updateSysInfo();
+        if (info.uptime != old_uptime) {
+            publish_var_uptime(info.uptime);
+        }
+        if (info.procs != old_nproc) {
+            publish_var_nprocesses(info.procs);
+        }
+    }
+}
+
+std::string interface_tutorial_moduleImpl::handle_command_tutorial(std::string& payload) {
+    // your code for cmd command_tutorial goes here
+    return "everest";
+}
+
+void interface_tutorial_moduleImpl::updateSysInfo() {
+    sysinfo(&info);  // omitting evaluation of return value and errno !
+}
+
+} // namespace interface_impl_tutorial_module
+} // namespace module

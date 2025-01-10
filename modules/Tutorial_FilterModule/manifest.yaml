@@ -1,0 +1,17 @@
+description: A Filter Module for an Everest Tutorial Module
+config:
+  config_filter_every_nths:
+    description: Configures every nth sample to be published
+    type: integer
+    default: 1
+provides:
+  main:
+    interface: tutorial_filter
+    description: An actual implementation of the named interface.
+requires:
+  interface_tutorial_module:
+    interface: tutorial_system
+metadata:
+  license: https://opensource.org/licenses/Apache-2.0
+  authors:
+    - cbu, Pionix

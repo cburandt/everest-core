@@ -1,0 +1,11 @@
+active_modules:
+  tutorial_module_instance:
+    module: Tutorial_SourceModule
+  filter_module_instance:
+    config_module:
+      config_filter_every_nths: 5
+    connections:
+      interface_tutorial_module:
+        - module_id: tutorial_module_instance
+          implementation_id: main
+    module: Tutorial_FilterModule

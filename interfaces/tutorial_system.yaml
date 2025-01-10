@@ -1,0 +1,18 @@
+description: The interface of the tutorial module.
+cmds:
+  command_tutorial:
+    description: A command the tutorial module's interface provides. It receives a simple string.
+    arguments:
+      payload:
+        description: An arbitrary string that can be sent to the module.
+        type: string
+    result:
+      description: The answer of the module (which per default will just be "everest").
+      type: string
+vars:
+  var_uptime:
+    description: Uptime of the host system
+    type: integer
+  var_nprocesses:
+    description: Number of processes
+    type: integer

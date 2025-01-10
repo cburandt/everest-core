@@ -1,0 +1,14 @@
+description: An Everest Tutorial Module
+config:
+  config_tutorial_switch:
+    description: A boolean configuration parameter.
+    type: boolean
+    default: false
+provides:
+  main:
+    interface: tutorial_system
+    description: An actual implementation of the named interface
+metadata:
+  license: https://opensource.org/licenses/Apache-2.0
+  authors:
+    - cbu, Pionix

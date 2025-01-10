@@ -1,0 +1,18 @@
+description: The partner interface of the tutorial module.
+cmds:
+  command_set_mode_odd:
+    description: A command which allows to set if odd or even numbers should be published as var
+    arguments:
+      chooseOdd:
+        description: Switch
+        type: boolean
+    result:
+      description: The answer of the module (which per default will be "odd" or "even").
+      type: string
+vars:
+  var_filtered_nproc:
+    description: Number of processes, filtered to what has been configured
+    type: integer
+  var_filtered_uptime:
+    description: Uptime, reduced rate
+    type: integer
